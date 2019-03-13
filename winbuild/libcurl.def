@@ -1,0 +1,13 @@
+LIBRARY
+
+EXPORTS
+
+Curl_isalpha
+Curl_isalnum
+Curl_isdigit
+Curl_isspace
+curlx_strtoofft
+curlx_uztoso
+curlx_read
+curlx_sotouz
+curlx_nonblock
