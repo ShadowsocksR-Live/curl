@@ -183,7 +183,7 @@
     <ClCompile Include="..\src\tool_help.c" />
     <ClCompile Include="..\src\tool_helpers.c" />
     <ClCompile Include="..\src\tool_homedir.c" />
-    <ClCompile Include="..\src\tool_hugehelp.c" />
+    <ClCompile Include="tool_hugehelp.c" />
     <ClCompile Include="..\src\tool_libinfo.c" />
     <ClCompile Include="..\src\tool_main.c" />
     <ClCompile Include="..\src\tool_metalink.c" />

@@ -332,9 +332,6 @@
     <ClCompile Include="..\lib\pingpong.c">
       <Filter>lib</Filter>
     </ClCompile>
-    <ClCompile Include="..\lib\pipeline.c">
-      <Filter>lib</Filter>
-    </ClCompile>
     <ClCompile Include="..\lib\pop3.c">
       <Filter>lib</Filter>
     </ClCompile>
@@ -740,9 +737,6 @@
       <Filter>lib</Filter>
     </ClInclude>
     <ClInclude Include="..\lib\pingpong.h">
-      <Filter>lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\lib\pipeline.h">
       <Filter>lib</Filter>
     </ClInclude>
     <ClInclude Include="..\lib\pop3.h">

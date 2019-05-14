@@ -226,7 +226,6 @@
     <ClCompile Include="..\lib\openldap.c" />
     <ClCompile Include="..\lib\parsedate.c" />
     <ClCompile Include="..\lib\pingpong.c" />
-    <ClCompile Include="..\lib\pipeline.c" />
     <ClCompile Include="..\lib\pop3.c" />
     <ClCompile Include="..\lib\progress.c" />
     <ClCompile Include="..\lib\psl.c" />
@@ -374,7 +373,6 @@
     <ClInclude Include="..\lib\nonblock.h" />
     <ClInclude Include="..\lib\parsedate.h" />
     <ClInclude Include="..\lib\pingpong.h" />
-    <ClInclude Include="..\lib\pipeline.h" />
     <ClInclude Include="..\lib\pop3.h" />
     <ClInclude Include="..\lib\progress.h" />
     <ClInclude Include="..\lib\psl.h" />

@@ -86,7 +86,7 @@
     <ClCompile Include="..\src\tool_homedir.c">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\tool_hugehelp.c">
+    <ClCompile Include="tool_hugehelp.c">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\src\tool_libinfo.c">
