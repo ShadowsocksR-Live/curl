@@ -68,7 +68,7 @@
 #include "progress.h"
 
 #  if defined(CURL_STATICLIB) && !defined(CARES_STATICLIB) && \
-     (defined(WIN32) || defined(_WIN32) || defined(__SYMBIAN32__))
+     (defined(WIN32) || defined(__SYMBIAN32__))
 #    define CARES_STATICLIB
 #  endif
 #  include <ares.h>
@@ -331,9 +331,9 @@ static int waitperform(struct connectdata *conn, int timeout_ms)
     /* move through the descriptors and ask for processing on them */
     for(i = 0; i < num; i++)
       ares_process_fd((ares_channel)data->state.resolver,
-                      pfd[i].revents & (POLLRDNORM|POLLIN)?
+                      (pfd[i].revents & (POLLRDNORM|POLLIN))?
                       pfd[i].fd:ARES_SOCKET_BAD,
-                      pfd[i].revents & (POLLWRNORM|POLLOUT)?
+                      (pfd[i].revents & (POLLWRNORM|POLLOUT))?
                       pfd[i].fd:ARES_SOCKET_BAD);
   }
   return nfds;
@@ -490,9 +490,7 @@ CURLcode Curl_resolver_wait_resolv(struct connectdata *conn,
 
   if(result)
     /* close the connection, since we can't return failure here without
-       cleaning up this connection properly.
-       TODO: remove this action from here, it is not a name resolver decision.
-    */
+       cleaning up this connection properly. */
     connclose(conn, "c-ares resolve failed");
 
   return result;

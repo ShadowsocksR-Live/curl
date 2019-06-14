@@ -157,15 +157,8 @@ CURLcode Curl_fillreadbuffer(struct connectdata *conn, size_t bytes,
   size_t buffersize = bytes;
   size_t nread;
 
-#ifndef CURL_DISABLE_HTTP
-  struct curl_slist *trailers = NULL;
-  CURLcode c;
-  int trailers_ret_code;
-#endif
-
   curl_read_callback readfunc = NULL;
   void *extra_data = NULL;
-  bool added_crlf = FALSE;
 
 #ifdef CURL_DOES_CONVERSIONS
   bool sending_http_headers = FALSE;
@@ -182,6 +175,10 @@ CURLcode Curl_fillreadbuffer(struct connectdata *conn, size_t bytes,
 
 #ifndef CURL_DISABLE_HTTP
   if(data->state.trailers_state == TRAILERS_INITIALIZED) {
+    struct curl_slist *trailers = NULL;
+    CURLcode c;
+    int trailers_ret_code;
+
     /* at this point we already verified that the callback exists
        so we compile and store the trailers buffer, then proceed */
     infof(data,
@@ -296,7 +293,7 @@ CURLcode Curl_fillreadbuffer(struct connectdata *conn, size_t bytes,
        here, knowing they'll become CRLFs later on.
      */
 
-    char hexbuffer[11] = "";
+    bool added_crlf = FALSE;
     int hexlen = 0;
     const char *endofline_native;
     const char *endofline_network;
@@ -317,6 +314,7 @@ CURLcode Curl_fillreadbuffer(struct connectdata *conn, size_t bytes,
 
     /* if we're not handling trailing data, proceed as usual */
     if(data->state.trailers_state != TRAILERS_SENDING) {
+      char hexbuffer[11] = "";
       hexlen = msnprintf(hexbuffer, sizeof(hexbuffer),
                          "%zx%s", nread, endofline_native);
 
@@ -463,7 +461,6 @@ CURLcode Curl_readrewind(struct connectdata *conn)
       infof(data, "the ioctl callback returned %d\n", (int)err);
 
       if(err) {
-        /* FIXME: convert to a human readable error message */
         failf(data, "ioctl callback returned error %d", (int)err);
         return CURLE_SEND_FAIL_REWIND;
       }
@@ -1506,6 +1503,7 @@ CURLcode Curl_pretransfer(struct Curl_easy *data)
     data->state.authhost.picked &= data->state.authhost.want;
     data->state.authproxy.picked &= data->state.authproxy.want;
 
+#ifndef CURL_DISABLE_FTP
     if(data->state.wildcardmatch) {
       struct WildcardData *wc = &data->wildcard;
       if(wc->state < CURLWC_INIT) {
@@ -1514,6 +1512,7 @@ CURLcode Curl_pretransfer(struct Curl_easy *data)
           return CURLE_OUT_OF_MEMORY;
       }
     }
+#endif
   }
 
   return result;
