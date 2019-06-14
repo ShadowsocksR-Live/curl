@@ -22,6 +22,11 @@
 /builds/
 __pycache__
 CHANGES.dist
+CMakeFiles/
+CMakeCache.txt
+*.cmake
+*.so
+*.tcl
 Debug
 INSTALL
 Makefile
