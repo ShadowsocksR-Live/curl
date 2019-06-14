@@ -165,6 +165,7 @@
     <ClCompile Include="..\lib\curl_endian.c" />
     <ClCompile Include="..\lib\curl_fnmatch.c" />
     <ClCompile Include="..\lib\curl_gethostname.c" />
+    <ClCompile Include="..\lib\curl_get_line.c" />
     <ClCompile Include="..\lib\curl_gssapi.c" />
     <ClCompile Include="..\lib\curl_memrchr.c" />
     <ClCompile Include="..\lib\curl_multibyte.c" />
@@ -272,7 +273,6 @@
     <ClCompile Include="..\lib\vauth\spnego_sspi.c" />
     <ClCompile Include="..\lib\vauth\vauth.c" />
     <ClCompile Include="..\lib\version.c" />
-    <ClCompile Include="..\lib\vtls\cyassl.c" />
     <ClCompile Include="..\lib\vtls\gskit.c" />
     <ClCompile Include="..\lib\vtls\gtls.c" />
     <ClCompile Include="..\lib\vtls\mbedtls.c" />
@@ -316,6 +316,7 @@
     <ClInclude Include="..\lib\curl_endian.h" />
     <ClInclude Include="..\lib\curl_fnmatch.h" />
     <ClInclude Include="..\lib\curl_gethostname.h" />
+    <ClInclude Include="..\lib\curl_get_line.h" />
     <ClInclude Include="..\lib\curl_gssapi.h" />
     <ClInclude Include="..\lib\curl_hmac.h" />
     <ClInclude Include="..\lib\curl_ldap.h" />
@@ -409,7 +410,6 @@
     <ClInclude Include="..\lib\vauth\digest.h" />
     <ClInclude Include="..\lib\vauth\ntlm.h" />
     <ClInclude Include="..\lib\vauth\vauth.h" />
-    <ClInclude Include="..\lib\vtls\cyassl.h" />
     <ClInclude Include="..\lib\vtls\gskit.h" />
     <ClInclude Include="..\lib\vtls\gtls.h" />
     <ClInclude Include="..\lib\vtls\mbedtls.h" />
