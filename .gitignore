@@ -32,6 +32,8 @@ INSTALL
 Makefile
 Makefile.in
 Release
+x64
+install_manifest.txt
 TAGS
 aclocal.m4
 aclocal.m4.bak
