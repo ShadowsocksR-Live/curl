@@ -294,7 +294,7 @@ if(WIN32)
   cmake_dependent_option(CURL_WINDOWS_SSPI "Use windows libraries to allow NTLM authentication without openssl" ON
     CMAKE_USE_WINSSL OFF)
 endif()
-option(CMAKE_USE_MBEDTLS "Enable mbedTLS for SSL/TLS" OFF)
+#option(CMAKE_USE_MBEDTLS "Enable mbedTLS for SSL/TLS" OFF)
 
 set(openssl_default ON)
 if(WIN32 OR CMAKE_USE_SECTRANSP OR CMAKE_USE_WINSSL OR CMAKE_USE_MBEDTLS)
